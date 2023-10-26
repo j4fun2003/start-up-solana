@@ -8,10 +8,8 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class UserService {
-    @Autowired
-    UserRepo dao;
-    public List<User> findAll(){
-        return dao.findAll();
-    }
+public interface UserService {
+  User login(String email,String password);
+
+  Boolean activeUser(User user);
 }
