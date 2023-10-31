@@ -32,6 +32,15 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
+    @Override
+    public Boolean existsUserByEmail(String email) {
+        return userRepo.existsUserByEmail(email);
+    }
+
+    @Override
+    public User save(User user) {
+        return userRepo.save(user);
+    }
 
 
 }

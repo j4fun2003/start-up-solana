@@ -39,4 +39,7 @@ public class User {
     @OneToMany(mappedBy = "investor")
     private List<InvestedProject> investedProjects;
 
+    @OneToMany(mappedBy = "user")
+    private List<Project> projects;
+
 }

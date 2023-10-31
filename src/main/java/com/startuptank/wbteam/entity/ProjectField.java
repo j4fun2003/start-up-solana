@@ -17,8 +17,10 @@ public class ProjectField {
     @Column(name = "field_name")
     private String fieldName;
 
+    @Column(name = "field_image_url")
+    private String fieldImageUrl;
+
     @OneToMany(mappedBy = "projectField")
     private List<Project> projects;
 
-    // Constructors, getters, and setters
 }

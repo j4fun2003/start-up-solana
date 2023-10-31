@@ -12,14 +12,17 @@
             <div class="row">
                 <div class="col-lg-6 align-self-center">
                     <h2>Register</h2>
-                    <form id="register-form" action="register" method="post" >
-                        <div class="mb-3 mt-3">
-                            <label for="username" style="color: white;">UserName:</label> <input
-                                type="text" class="form-control" id="username"
-                                placeholder="Enter UserName" name="username" >
-                        </div>
+                    <form id="register-form" action="/register" method="post" th:object="${user}">
                         <div class="mb-3">
-                            <label for="password" style="color: white;">Password:</label> <input
+                            <label for="email" style="color: white;">Email:</label>
+                            <input th:field="*{email}"
+                                type="email" class="form-control" id="email"
+                                placeholder="Enter Email" name="email">
+                        </div>
+                        <p class="text-danger" th:text="${errEmail}"></p>
+                        <div class="mb-3">
+                            <label for="password" style="color: white;">Password:</label>
+                            <input th:field="*{password}"
                                 type="password" class="form-control" id="password"
                                 placeholder="Enter Password" name="password">
                         </div>
@@ -28,12 +31,7 @@
                                 type="re-password" class="form-control" id="re-password"
                                 placeholder="Re-Enter Your Password:" name="re-password">
                         </div>
-                        <div class="mb-3">
-                            <label for="email" style="color: white;">Email:</label> <input
-                                type="email" class="form-control" id="email"
-                                placeholder="Enter Email" name="email">
-                        </div>
-
+                        <p class="text-danger" th:text="${errblank}"></p>
                         <button type="submit" class="btn btn-info">Register</button>
                     </form>
                 </div>

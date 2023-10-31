@@ -1,14 +1,14 @@
 package com.startuptank.wbteam.entity;
 
 
-import com.startuptank.wbteam.constant.InvestmentType;
-import com.startuptank.wbteam.constant.ProjectStatus;
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.Date;
 import java.util.List;
 
 @Entity
+@Data
 @Table(name = "Projects")
 public class Project {
     @Id
@@ -42,15 +42,32 @@ public class Project {
     private String contactEmail;
 
     @Column(name = "project_status")
-    @Enumerated(EnumType.STRING)
-    private ProjectStatus projectStatus;
+    private String projectStatus;
 
     @Column(name = "investment_type")
-    @Enumerated(EnumType.STRING)
-    private InvestmentType investmentType;
+    private String investmentType;
 
     @OneToMany(mappedBy = "project")
     private List<InvestedProject> investedProjects;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+    @Override
+    public String toString() {
+        return "Project{" +
+                "projectId=" + projectId +
+                ", projectName='" + projectName + '\'' +
+                ", projectDescription='" + projectDescription + '\'' +
+                ", projectImageUrl='" + projectImageUrl + '\'' +
+                ", projectVideoUrl='" + projectVideoUrl + '\'' +
+                ", fundingGoal=" + fundingGoal +
+                ", deadline=" + deadline +
+                ", contactEmail='" + contactEmail + '\'' +
+                ", projectStatus='" + projectStatus + '\'' +
+                ", investmentType='" + investmentType + '\'' +
+                '}';
+    }
 
     // Constructors, getters, and setters
 }

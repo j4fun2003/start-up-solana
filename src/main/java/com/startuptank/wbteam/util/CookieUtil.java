@@ -3,30 +3,37 @@ package com.startuptank.wbteam.util;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Arrays;
 import java.util.Optional;
 
 @Component
 public class CookieUtil {
+
     @Autowired
-    HttpServletResponse response;
+    private HttpServletResponse response;
+
     @Autowired
-    HttpServletRequest request;
+    private HttpServletRequest request;
 
     public Cookie setCookie(String value, String name, int hours) {
-        Cookie cookie = new Cookie(value, name);
-        cookie.setMaxAge(hours *60*10);
+        Cookie cookie = new Cookie(name, value);
+        cookie.setMaxAge(hours * 60 * 60); // Fix the calculation
         response.addCookie(cookie);
         return cookie;
     }
 
     public Optional<String> getCookie(String key) {
-        return   Arrays.stream(request.getCookies())
-                .filter(c -> equals(c.getName()))
-                .map(Cookie::getValue)
-                .findAny();
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (key.equals(cookie.getName())) { // Change "equals" to "equals"
+                    return Optional.ofNullable(cookie.getValue());
+                }
+            }
+        }
+        return Optional.empty();
     }
 }

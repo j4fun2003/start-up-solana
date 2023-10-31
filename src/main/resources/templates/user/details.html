@@ -17,33 +17,33 @@
         </div>
         <div class="col-lg-7">
           <div class="left-image">
-            <img src="assets/images/item-details-01.jpg" alt="" style="border-radius: 20px;">
+            <img th:src="@{|/user/images/${project.projectImageUrl}|}" alt="" style="border-radius: 20px;">
           </div>
         </div>
         <div class="col-lg-5 align-self-center">
-          <h4>PROJECT <em>#1</em></h4>
+          <h4 th:text="${project.projectName}"></h4>
           <span class="author">
-            <img src="assets/images/author-03.jpg" alt="" style="max-width: 50px; border-radius: 50%;">
-            <h6>CLIENT NAME<br><a href="#">@CLIENTTAG</a></h6>
+            <img src="/user/images/author-03.jpg" alt="" style="max-width: 50px; border-radius: 50%;">
+            <h6 th:text="${project.user.fullName}"><br><a href="#">@CLIENTTAG</a></h6>
           </span>
           <p>Lorem ipsum dolor sit amet, consectetu dipiscingei elit, sed do eiusmod tempor incididunt ut
             labore et dolore magna aliqua.</p>
           <div class="row">
             <div class="col-3">
               <span class="bid">
-                JOB PAYOUT<br><strong>6.06 ETH</strong><br><em>($8,025.50)</em>
+                JOB PAYOUT<br><strong th:text="${project.fundingGoal}"></strong>
               </span>
             </div>
 
           </div>
-          <div class="row">
+     <!--     <div class="row">
             <div class="col-12">
               <span class="bid">
                 JOB TAGS<br><strong>TAG1 TAG2 TAG3</strong>
               </span>
             </div>
 
-          </div>
+          </div>-->
           <form action="submit">
 
             <button type="submit" id="form-submit" class="main-button">CONTACT CLIENT</button>
@@ -62,86 +62,16 @@
               <div class="col-lg-6">
 
               </div>
-              <div class="col-lg-4 col-md-6">
+              <div th:each="item:${pro}" class="col-lg-4 col-md-6">
                 <div class="item">
                   <div class="left-img">
-                    <img src="assets/images/current-01.jpg" alt="">
+                    <img th:src="@{|/user/images/${item.projectImageUrl}|}" alt="">
                   </div>
                   <div class="right-content">
-                    <h4>JOB TITLE #1</h4>
-                    <a href="#">CLIENT NAME</a>
+                    <h4 th:text="${item.projectField.fieldName}"></h4>
+                    <a th:href="@{|/detail/${item.projectId}|}" th:text="${item.projectName}"></a>
                     <div class="line-dec"></div>
-                    <h6>PAYOUT: <em>0.06 ETH</em></h6>
-
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="item">
-                  <div class="left-img">
-                    <img src="assets/images/current-02.jpg" alt="">
-                  </div>
-                  <div class="right-content">
-                    <h4>JOB TITLE #2</h4>
-                    <a href="#">CLIENT NAME</a>
-                    <div class="line-dec"></div>
-                    <h6>PAYOUT: <em>0.06 ETH</em></h6>
-
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="item">
-                  <div class="left-img">
-                    <img src="assets/images/current-03.jpg" alt="">
-                  </div>
-                  <div class="right-content">
-                    <h4>JOB TITLE #3</h4>
-                    <a href="#">CLIENT NAME</a>
-                    <div class="line-dec"></div>
-                    <h6>PAYOUT: <em>0.06 ETH</em></h6>
-
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="item">
-                  <div class="left-img">
-                    <img src="assets/images/current-04.jpg" alt="">
-                  </div>
-                  <div class="right-content">
-                    <h4>JOB TITLE #4</h4>
-                    <a href="#">CLIENT NAME</a>
-                    <div class="line-dec"></div>
-                    <h6>PAYOUT: <em>0.06 ETH</em></h6>
-
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="item">
-                  <div class="left-img">
-                    <img src="assets/images/current-01.jpg" alt="">
-                  </div>
-                  <div class="right-content">
-                    <h4>JOB TITLE #5</h4>
-                    <a href="#">CLIENT NAME</a>
-                    <div class="line-dec"></div>
-                    <h6>PAYOUT: <em>0.06 ETH</em></h6>
-
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="item">
-                  <div class="left-img">
-                    <img src="assets/images/current-02.jpg" alt="">
-                  </div>
-                  <div class="right-content">
-                    <h4>JOB TITLE #6</h4>
-                    <a href="#">CLIENT NAME</a>
-                    <div class="line-dec"></div>
-                    <h6>PAYOUT: <em>0.06 ETH</em></h6>
+                    <h6>PAYOUT: <em th:text="${item.fundingGoal}"></em></h6>
 
                   </div>
                 </div>

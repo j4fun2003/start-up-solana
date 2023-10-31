@@ -12,4 +12,8 @@ public interface UserService {
   User login(String email,String password);
 
   Boolean activeUser(User user);
+
+  Boolean existsUserByEmail(String email);
+
+  User save(User user);
 }
