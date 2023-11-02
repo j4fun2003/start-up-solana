@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/common/layout.html :: dynamic(~{::main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:fragment="main">
+        <!-- ***** Main Banner Area Start ***** -->
+        <div class="main-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 align-self-center">
+                        <div class="header-text">
+                            <h6> SOLANA STARTUP</h6>
+                            <h2>TALK, CRYPTO &amp; Work Best Payed Jobs.</h2>
+                            <p> SOLANA STARTUP is a platform that connects potential investors with startup projects on the
+                                Solana blockchain. It uses NFT technology to create tokens that represent the projects,
+                                making it easy for users to find and evaluate potential
+                                investments.
+                            </p>
+                            <div class="buttons">
+
+                                <div class="main-button">
+                                    <a href="explore.html">Explore Top Jobs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 offset-lg-1">
+                        <div class="owl-banner owl-carousel">
+                            <div class="item">
+                                <img th:src="@{|/user/images/banner-01.png|}" alt="">
+                            </div>
+                            <div class="item">
+                                <img th:src="@{|/user/images/banner-02.png|}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Main Banner Area End ***** -->
+        <div class="categories-collections">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="categories">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="section-heading">
+                                        <div class="line-dec"></div>
+                                        <h2>Browse Through Our <em>Categories</em> Here.</h2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-6">
+                                    <div class="item">
+                                        <div class="icon">
+                                            <img th:src="@{|/user/images/icon-01.png|}" alt="">
+                                        </div>
+                                        <h4>Blockchain</h4>
+                                        <div class="icon-button">
+                                            <a href="#"><i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-6">
+                                    <div class="item">
+                                        <div class="icon">
+                                            <img th:src="@{|/user/images/icon-02.png|}" alt="">
+                                        </div>
+                                        <h4>Digital Art</h4>
+                                        <div class="icon-button">
+                                            <a href="#"><i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-6">
+                                    <div class="item">
+                                        <div class="icon">
+                                            <img th:src="@{|/user/images/icon-03.png|}" alt="">
+                                        </div>
+                                        <h4>Music Art</h4>
+                                        <div class="icon-button">
+                                            <a href="#"><i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-6">
+                                    <div class="item">
+                                        <div class="icon">
+                                            <img th:src="@{|/user/images/icon-04.png|}" alt="">
+                                        </div>
+                                        <h4>VirtualW</h4>
+                                        <div class="icon-button">
+                                            <a href="#"><i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-6">
+                                    <div class="item">
+                                        <div class="icon">
+                                            <img th:src="@{|/user/images/icon-05.png|}" alt="">
+                                        </div>
+                                        <h4>Valuable</h4>
+                                        <div class="icon-button">
+                                            <a href="#"><i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-6">
+                                    <div class="item">
+                                        <div class="icon">
+                                            <img th:src="@{|/user/images/icon-06.png|}" alt="">
+                                        </div>
+                                        <h4>Triple NFT</h4>
+                                        <div class="icon-button">
+                                            <a href="#"><i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="collections">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="section-heading">
+                                        <div class="line-dec"></div>
+                                        <h2>Explore Some Highly Intrested <em>Jobs</em> In Market.</h2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="owl-collection owl-carousel">
+                                        <div class="item">
+                                            <img th:src="@{|/user/images/collection-01.jpg|}" alt="">
+                                            <div class="down-content">
+                                                <h4>Mutant Bored Ape Yacht Club</h4>
+                                                <span class="collection">JOB PAYOUT:<br><strong>2.0 ETH</strong></span>
+                                                <span class="category">Category:<br><strong>Digital Crypto</strong></span>
+                                                <div class="main-button">
+                                                    <a href="explore.html">Explore Mutant</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img th:src="@{|/user/images/collection-01.jpg|}" alt="">
+                                            <div class="down-content">
+                                                <h4>Bored Ape Kennel Club</h4>
+                                                <span class="collection">JOB PAYOUT:<br><strong>2.0 ETH</strong></span>
+                                                <span class="category">Category:<br><strong>Visual Art</strong></span>
+                                                <div class="main-button">
+                                                    <a href="explore.html">Explore Bored Ape</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img th:src="@{|/user/images/collection-01.jpg|}" alt="">
+                                            <div class="down-content">
+                                                <h4>Genesis Collective Statue</h4>
+                                                <span class="collection">JOB PAYOUT:<br><strong>2.0 ETH</strong></span>
+                                                <span class="category">Category:<br><strong>Music Art</strong></span>
+                                                <div class="main-button">
+                                                    <a href="explore.html">Explore Genesis</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img th:src="@{|/user/images/collection-01.jpg|}" alt="">
+                                            <div class="down-content">
+                                                <h4>Worldwide Artwork Ground</h4>
+                                                <span class="collection">JOB PAYOUT:<br><strong>2.0 ETH</strong></span>
+                                                <span class="category">Category:<br><strong>Blockchain</strong></span>
+                                                <div class="main-button">
+                                                    <a href="explore.html">Explore Worldwide</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="currently-market">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="section-heading">
+                            <div class="line-dec"></div>
+                            <h2><em>Jobs</em> Currently In The Market.</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="filters">
+                            <ul>
+                                <li data-filter="*" class="active">All Items</li>
+                                <li data-filter=".msc">Music Art</li>
+                                <li data-filter=".dig">Digital Art</li>
+                                <li data-filter=".blc">Blockchain</li>
+                                <li data-filter=".vtr">Virtual</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="row grid">
+                            <div class="col-lg-6 currently-market-item all msc">
+                                <div class="item">
+                                    <div class="left-image">
+                                        <img th:src="@{|/user/images/market-01.jpg|}" alt=""
+                                             style="border-radius: 20px; min-width: 195px;">
+                                    </div>
+                                    <div class="right-content">
+                                        <h4>Music Art Super Item</h4>
+                                        <span class="author">
+                                    <img th:src="@{|/user/images/author.jpg|}"  alt=""
+                                         style="max-width: 50px; border-radius: 50%;">
+                                    <h6>Liberty Artist<br><a href="#">@libertyart</a></h6>
+                                </span>
+                                        <div class="line-dec"></div>
+                                        <span class="bid">
+                                    JOB PAYOUT<br><strong>2.03 ETH</strong><br><em>($8,240.50)</em>
+                                </span>
+
+                                        <div class="text-button">
+                                            <a href="details.html">View Item Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 currently-market-item all msc">
+                                <div class="item">
+                                    <div class="left-image">
+                                        <img th:src="@{|/user/images/market-01.jpg|}" alt=""
+                                             style="border-radius: 20px; min-width: 195px;">
+                                    </div>
+                                    <div class="right-content">
+                                        <h4>Music Art Super Item</h4>
+                                        <span class="author">
+                                    <img th:src="@{|/user/images/author.jpg|}"  alt=""
+                                         style="max-width: 50px; border-radius: 50%;">
+                                    <h6>Liberty Artist<br><a href="#">@libertyart</a></h6>
+                                </span>
+                                        <div class="line-dec"></div>
+                                        <span class="bid">
+                                    JOB PAYOUT<br><strong>2.03 ETH</strong><br><em>($8,240.50)</em>
+                                </span>
+
+                                        <div class="text-button">
+                                            <a href="details.html">View Item Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 currently-market-item all msc">
+                                <div class="item">
+                                    <div class="left-image">
+                                        <img th:src="@{|/user/images/market-01.jpg|}" alt=""
+                                             style="border-radius: 20px; min-width: 195px;">
+                                    </div>
+                                    <div class="right-content">
+                                        <h4>Music Art Super Item</h4>
+                                        <span class="author">
+                                    <img th:src="@{|/user/images/author.jpg|}"  alt=""
+                                         style="max-width: 50px; border-radius: 50%;">
+                                    <h6>Liberty Artist<br><a href="#">@libertyart</a></h6>
+                                </span>
+                                        <div class="line-dec"></div>
+                                        <span class="bid">
+                                    JOB PAYOUT<br><strong>2.03 ETH</strong><br><em>($8,240.50)</em>
+                                </span>
+
+                                        <div class="text-button">
+                                            <a href="details.html">View Item Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 currently-market-item all msc">
+                                <div class="item">
+                                    <div class="left-image">
+                                        <img th:src="@{|/user/images/market-01.jpg|}" alt=""
+                                             style="border-radius: 20px; min-width: 195px;">
+                                    </div>
+                                    <div class="right-content">
+                                        <h4>Music Art Super Item</h4>
+                                        <span class="author">
+                                    <img th:src="@{|/user/images/author.jpg|}"  alt=""
+                                         style="max-width: 50px; border-radius: 50%;">
+                                    <h6>Liberty Artist<br><a href="#">@libertyart</a></h6>
+                                </span>
+                                        <div class="line-dec"></div>
+                                        <span class="bid">
+                                    JOB PAYOUT<br><strong>2.03 ETH</strong><br><em>($8,240.50)</em>
+                                </span>
+
+                                        <div class="text-button">
+                                            <a href="details.html">View Item Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 currently-market-item all msc">
+                                <div class="item">
+                                    <div class="left-image">
+                                        <img th:src="@{|/user/images/market-01.jpg|}" alt=""
+                                             style="border-radius: 20px; min-width: 195px;">
+                                    </div>
+                                    <div class="right-content">
+                                        <h4>Music Art Super Item</h4>
+                                        <span class="author">
+                                    <img th:src="@{|/user/images/author.jpg|}"  alt=""
+                                         style="max-width: 50px; border-radius: 50%;">
+                                    <h6>Liberty Artist<br><a href="#">@libertyart</a></h6>
+                                </span>
+                                        <div class="line-dec"></div>
+                                        <span class="bid">
+                                    JOB PAYOUT<br><strong>2.03 ETH</strong><br><em>($8,240.50)</em>
+                                </span>
+
+                                        <div class="text-button">
+                                            <a href="details.html">View Item Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 currently-market-item all msc">
+                                <div class="item">
+                                    <div class="left-image">
+                                        <img th:src="@{|/user/images/market-01.jpg|}" alt=""
+                                             style="border-radius: 20px; min-width: 195px;">
+                                    </div>
+                                    <div class="right-content">
+                                        <h4>Music Art Super Item</h4>
+                                        <span class="author">
+                                    <img th:src="@{|/user/images/author.jpg|}"  alt=""
+                                         style="max-width: 50px; border-radius: 50%;">
+                                    <h6>Liberty Artist<br><a href="#">@libertyart</a></h6>
+                                </span>
+                                        <div class="line-dec"></div>
+                                        <span class="bid">
+                                    JOB PAYOUT<br><strong>2.03 ETH</strong><br><em>($8,240.50)</em>
+                                </span>
+
+                                        <div class="text-button">
+                                            <a href="details.html">View Item Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
