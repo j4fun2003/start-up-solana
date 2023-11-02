@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/common/layout.html :: dynamic(~{::main})}">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div th:fragment="main">
+
+  <div class="item-details-page">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <div class="line-dec"></div>
+            <h2>Upload <em>Your Job</em> Here.</h2>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <form id="contact" action="/create" method="post" enctype="multipart/form-data">
+            <div class="row">
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="title">JOB TITLE</label>
+                  <input type="text" name="title" id="title" placeholder="Ex. PROJECT #200" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="description">JOB TYPE</label>
+                  <select name="jobType" id="jobType" style="    display: block;
+                  width: 100%;
+                  height: 40px;
+                  border-radius: 20px;
+                  background: #282b2f;
+                  color: #afafaf;
+                  border: 1px solid #404245; padding: 0 15px;">
+                    <option >Choose job type</option>
+                    <option th:each="jt:${jobTypes} " th:value="${jt.fieldId}">[[${jt.fieldName}]]</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="funding">FUNDING GOAL</label>
+                  <input type="text" name="funding" id="funding" placeholder="Ex. 1000 2000"
+                         autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="deadline">DEADLINE</label>
+                  <input type="date" name="deadline" id="deadline"
+                         required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="status">PROJECT STATUS</label>
+                  <select name="status" id="status" style="    display: block;
+            width: 100%;
+            height: 40px;
+            border-radius: 20px;
+            background: #282b2f;
+            color: #afafaf;
+            border: 1px solid #404245; padding: 0 15px;">
+                    <option>Choose project status</option>
+                    <option th:each="ps : ${projectStatus}" th:value="${ps.status}">[[${ps.status}]]</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="investment">INVESTMENT TYPE</label>
+                  <select name="investment" id="investment" style="    display: block;
+            width: 100%;
+            height: 40px;
+            border-radius: 20px;
+            background: #282b2f;
+            color: #afafaf;
+            border: 1px solid #404245; padding: 0 15px;">
+                    <option>Choose investment type</option>
+                    <option th:each="it : ${investmentType}" th:value="${it.type}">[[${it.type}]]</option>
+
+                  </select>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="image">PROJECT IMAGE</label>
+                  <input type="file" name="image" id="image" style="padding: 8px 0px;
+                  background-color: transparent;
+                  border: none;
+                  border-radius: 0px;">
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="video">PROJECT VIDEO</label>
+                  <input type="file" name="video" id="video" style="padding: 8px 0px;
+                  background-color: transparent;
+                  border: none;
+                  border-radius: 0px;">
+                </fieldset>
+              </div>
+
+              
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Job description</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" name="description"
+                            placeholder="Give your freelancer the job details" rows="3"></textarea>
+                </div>
+
+              </div>
+
+              <div class="col-lg-12">
+                <br>
+                <fieldset>
+                  <button type="submit" id="form-submit" class="orange-button">Upload Your Job</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <div class="line-dec"></div>
+            <h2>This Is <em>Your Job</em> Preview.</h2>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="left-image">
+            <img src="assets/images/create-yours.jpg" alt="" style="border-radius: 20px;">
+          </div>
+        </div>
+        <div class="col-lg-5 align-self-center">
+          <h4>Dolores Haze Westworld Eye</h4>
+          <span class="author">
+            <img src="assets/images/author-02.jpg" alt="" style="max-width: 50px; border-radius: 50%;">
+            <h6>Kataleya Smithee<br><a href="#">@kataleey</a></h6>
+          </span>
+          <p>Lorem ipsum dolor sit amet, consectetu dipiscingei elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.</p>
+          <div class="row">
+            <div class="col-3">
+              <span class="bid">
+                Job Payout<br><strong>0.06 ETH</strong><br><em>($8055,35)</em>
+              </span>
+            </div>
+            <div class="col-4">
+              <span class="owner">
+                Owner<br><strong>Alan Smithee</strong><br><em>(@asmithee)</em>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
