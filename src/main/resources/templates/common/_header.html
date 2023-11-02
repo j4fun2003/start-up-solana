@@ -22,15 +22,15 @@
             <li><a href="/explore">Explore</a></li>
             <li><a href="/details">Item Details</a></li>
             <li><a href="/author">Author</a></li>
-            <li><a href="/create">Create Yours</a></li>
+            <li><a href="/createproject">Create Yours</a></li>
             <div class="dropdown">
               <a class="nav-link dropdown-toggle" href="#"
                  id="navbardrop" data-toggle="dropdown"> Information </a>
-              <ul class="dropdown-menu" >
-                  <li><a href="/logout">Log Out</a></li>
-                  <li><a href="/login">Login</a></li>
-                  <li><a href="/register">Register</a></li>
-                  <li><a href="/forgot-password">Forgot Password</a></li>
+              <ul class="dropdown-menu">
+                <li th:unless="${session.UserCurrent != null}"><a href="/login">Login</a></li>
+                <li th:unless="${session.UserCurrent != null}"><a href="/register">Register</a></li>
+                <li th:unless="${session.UserCurrent != null}"><a href="/forgot-password">Forgot Password</a></li>
+                <li th:if="${session.UserCurrent != null}"><a href="/logout">Log Out</a></li>
               </ul>
             </div>
           </ul>

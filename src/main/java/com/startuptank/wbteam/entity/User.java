@@ -25,7 +25,7 @@ public class User {
     private String email;
 
     @Column(name = "active")
-    private Boolean active;
+    private Boolean active = true;
 
     @Column(name = "phone_number")
     private String phoneNumber;

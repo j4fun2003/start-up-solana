@@ -29,9 +29,11 @@
               <div class="col-lg-6">
                 <fieldset>
                   <label for="description">JOB TYPE</label>
-                  <input type="description" name="description" id="description"
-                         placeholder="Let your freelancer know what kind of job you want from them" autocomplete="on"
-                         required>
+                  <select  id="description">
+                    <option th:each="i : ${projectfield}" th:value="${i.fieldId}" th:text="${i.fieldName}">
+                    </option>
+                  </select>
+
                 </fieldset>
               </div>
               <div class="col-lg-6">
