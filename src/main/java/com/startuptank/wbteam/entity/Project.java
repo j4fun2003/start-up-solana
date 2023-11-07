@@ -3,6 +3,7 @@ package com.startuptank.wbteam.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 import java.util.List;
@@ -36,6 +37,8 @@ public class Project {
     private Double fundingGoal;
 
     @Column(name = "deadline")
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date deadline;
 
     @Column(name = "contact_email")

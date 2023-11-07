@@ -11,7 +11,6 @@ import java.util.List;
 @Repository
 public interface ProjectRepo extends JpaRepository<Project, Integer> {
     List<Project> findByProjectFieldFieldName(String fieldName);
-
     Project findProjectByProjectId(Integer id);
 }
 

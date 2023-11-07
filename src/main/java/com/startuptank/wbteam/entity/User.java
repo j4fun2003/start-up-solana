@@ -36,6 +36,9 @@ public class User {
     @Column(name = "address")
     private String address;
 
+    @Column(name = "wallet_address")
+    private String walletAddress;
+
     @OneToMany(mappedBy = "investor")
     private List<InvestedProject> investedProjects;
 

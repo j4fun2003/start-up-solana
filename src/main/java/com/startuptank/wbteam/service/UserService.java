@@ -14,6 +14,6 @@ public interface UserService {
   Boolean activeUser(User user);
 
   Boolean existsUserByEmail(String email);
-
   User save(User user);
+
 }

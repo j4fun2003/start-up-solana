@@ -10,7 +10,9 @@ import com.startuptank.wbteam.util.SessionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -105,15 +107,19 @@ public class UserController {
         return "redirect:/home";
     }
     //  get all project
-    @RequestMapping("/explore")
-    public String getExplore(Model model){
-        model.addAttribute("projectfield",projectFileService.findAll());
+    @RequestMapping(value = "/explore")
+    public String getExplore(Model model, @RequestParam("category") Optional<String> cate){
         List<Project> projects = projectService.findAll();
+        if(cate.isPresent()){
+            projects = projectService.findByProjectFieldFieldName(cate.get());
+            model.addAttribute("cate", cate.get());
+        }
+        model.addAttribute("projectfield",projectFileService.findAll());
         model.addAttribute("projects",projects);
+        model.addAttribute("projectAll", projectService.findAll());
+
         return "user/explore";
     }
-
-
     //    get detail project
     @RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
     public String getDetailProduct(Model model, @PathVariable("id") Integer id){
@@ -122,14 +128,32 @@ public class UserController {
         model.addAttribute("pro", projectService.findByProjectFieldFieldName(project.getProjectField().getFieldName()));
         return "user/details";
     }
-//    create project
+    //   profile
+    @RequestMapping(value = "/author", method = RequestMethod.GET)
+    public String getAuthor(Model model){
+        return "user/author";
+    }
+
+    //    create project
     @RequestMapping(value = "/createproject", method = RequestMethod.GET)
     public String getCreateProject(Model model){
         if(sessionService.get("UserCurrent") == null){
             return "user/login";
         }
+        model.addAttribute("project", new Project());
         model.addAttribute("projectfield",projectFileService.findAll());
         return "user/create-project";
+    }
+    @RequestMapping(value = "/createproject", method = RequestMethod.POST)
+    public String createProject(Model model,
+                                @ModelAttribute("project") Project project, @RequestParam("image") MultipartFile multipartFile){
+        User user = sessionService.get("UserCurrent");
+        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+        project.setProjectImageUrl(fileName);
+
+        project.setUser(user);
+        Project p = projectService.save(project);
+        return "redirect:/home";
     }
 
 }

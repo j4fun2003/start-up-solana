@@ -18,18 +18,18 @@
           </div>
         </div>
         <div class="col-lg-12">
-          <form id="contact" action="" method="post">
+          <form id="contact" action="/createproject" th:object="${project}" method="post" enctype="multipart/form-data">
             <div class="row">
               <div class="col-lg-6">
                 <fieldset>
                   <label for="title">JOB TITLE</label>
-                  <input type="title" name="title" id="title" placeholder="Ex. PROJECT #200" autocomplete="on" required>
+                  <input th:field="*{projectName}" type="title" name="title" id="title" placeholder="Ex. PROJECT #200" autocomplete="on" required>
                 </fieldset>
               </div>
               <div class="col-lg-6">
                 <fieldset>
                   <label for="description">JOB TYPE</label>
-                  <select  id="description">
+                  <select th:field="*{projectField.fieldId}" id="description">
                     <option th:each="i : ${projectfield}" th:value="${i.fieldId}" th:text="${i.fieldName}">
                     </option>
                   </select>
@@ -38,16 +38,19 @@
               </div>
               <div class="col-lg-6">
                 <fieldset>
-                  <label for="username">JOB TAGS</label>
-                  <input type="username" name="username" id="username" placeholder="Ex. TAG1 TAG2 TAG3"
-                         autocomplete="on" required>
+                  <label for="username">Date created</label>
+               <!--   <input th:field="*{deadline}" type="date" name="username" id="username" placeholder=""
+                         autocomplete="on" th:attr="value=${#dates.format(deadline, 'dd/MM/yyyy')}" required>-->
+                  <input th:field="*{deadline}" type="date" name="username" id="username" placeholder=""
+                         autocomplete="on"  required>
+
                 </fieldset>
               </div>
 
               <div class="col-lg-6">
                 <fieldset>
-                  <label for="price">JOB PAYOUT</label>
-                  <input type="price" name="price" id="price"
+                  <label for="price">SOLANA </label>
+                  <input th:field="*{fundingGoal}" type="price" name="price" id="price"
                          placeholder="The money you pay for your freelancer   Ex. 0.06 ETH" autocomplete="on" required>
                 </fieldset>
               </div>
@@ -55,7 +58,7 @@
               <div class="col-lg-12">
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Job description</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1"
+                  <textarea th:field="*{projectDescription}" class="form-control" id="exampleFormControlTextarea1"
                             placeholder="Give your freelancer the job details" rows="3"></textarea>
                 </div>
 
@@ -65,7 +68,7 @@
                 <br>
                 <fieldset>
                   <label for="file">Your File</label>
-                  <input type="file" id="file" name="myfiles[]" multiple />
+                  <input type="file" id="file" name="image" accept="image/png, image/jpeg"/>
                 </fieldset>
               </div>
               <div class="col-lg-8">
@@ -114,5 +117,18 @@
     </div>
   </div>
 </div>
+<!--<script>
+  // Lắng nghe sự kiện khi trường input thay đổi giá trị
+  document.getElementById("username").addEventListener("change", function () {
+    var inputDate = this.value;
+    // Chuyển đổi từ "dd/MM/yyyy" sang "yyyy-MM-dd"
+    var parts = inputDate.split("/");
+    if (parts.length === 3) {
+      var formattedDate = parts[2] + "-" + parts[1] + "-" + parts[0];
+      this.value = formattedDate;
+    }
+  });
+
+</script>-->
 </body>
 </html>

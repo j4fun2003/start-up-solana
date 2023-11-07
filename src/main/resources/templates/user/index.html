@@ -22,7 +22,7 @@
                             <div class="buttons">
 
                                 <div class="main-button">
-                                    <a href="explore.html">Explore Top Jobs</a>
+                                    <a href="/explore">Explore Top Jobs</a>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                                         </div>
                                         <h4 th:text="${item.fieldName}"></h4>
                                         <div class="icon-button">
-                                            <a th:href="@{|/cate/${item.fieldName}|}"><i class="fa fa-angle-right"></i></a>
+                                            <a th:href="@{|/explore?category=${item.fieldName}|}"><i class="fa fa-angle-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
