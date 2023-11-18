@@ -47,6 +47,10 @@ public class UserServiceImpl implements UserService {
     public User save(User user) {
         return userRepo.save(user);
     }
+    public User findByUserId(long parseLong) {
+       
+        return userRepo.findById(parseLong).get();
+    }
 
 
 

@@ -1,266 +1,57 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:replace="~{/common/layout.html :: dynamic(~{::main})}">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body>
-<div th:fragment="main">
-    <div class="author-page">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="author">
-                        <img src="assets/images/single-author.jpg" alt="" style="border-radius: 50%; max-width: 170px;">
-                        <h4>Melanie Smith <br> <a href="#">@melanie32</a></h4>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="right-info">
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="info-item">
-
-                                    <h6>1238 <i class="fas fa-coins"></i>
-                                        <em>Tokens</em></h6>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="info-item">
-
-                                    <h6>5 <i class="fas fa-star"></i> <em>Reviews</em></h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="main-button">
-                                    <a href="account-manegent.html">MANAGE YOUR ACCOUNT</a>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="main-button">
-                                    <a href="advertisement.html">ADVERTISE YOUR PROJECT</a>
-                                </div>
-
-                            </div>
-
+    <div th:fragment="main">
+        <div class="author-page">
+            <div class="container">
+                <div class="row">
+                    
+                    
+                    <div class="col-lg-12">
+                        <div class="section-heading">
+                            <div class="line-dec"></div>
+                            <h2>Your NFT projects</h2>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="section-heading">
-                        <div class="line-dec"></div>
-                        <h2>Melanie Smith’s Avaiable<em>Jobs</em>.</h2>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="item">
-                        <div class="row">
+                    <div class="col-lg-3 col-md-6" th:each="project:${projects}">
+                        <div class="item">
+                          <div class="row">
                             <div class="col-lg-12">
-                            <span class="author">
-              <img src="assets/images/author.jpg" alt="" style="max-width: 50px; border-radius: 50%;">
-            </span>
-                                <img src="assets/images/discover-03.jpg" alt="" style="border-radius: 20px;">
-                                <h4>Mutant Ape Bored</h4>
+                              <span class="author">
+                              </span>
+                              <img th:src="@{|/user/images/${project.projectImageUrl}|}" alt="" style="border-radius: 20px;">
+                              <h4 th:text="${project.projectName}"></h4>
                             </div>
                             <div class="col-lg-12">
-                                <div class="line-dec"></div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <span>JOB PAYOUT: <br> <strong>2.03 ETH</strong></span>
-                                    </div>
-
+                              <div class="line-dec"></div>
+                              <div class="row">
+                                <div class="col">
+                                  <span>JOB PAYOUT: <br> <strong th:text="${project.fundingGoal}"></strong></span>
                                 </div>
+                              </div>
                             </div>
                             <div class="col-lg-12">
-                                <div class="main-button">
-                                    <a href="details.html">View Details</a>
-                                </div>
+                              <div class="main-button">
+                                <a th:href="@{|/detail/${project.projectId}|}">View Details</a>
+                              </div>
                             </div>
+                          </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-lg-12">
-                            <span class="author">
-              <img src="assets/images/author-02.jpg" alt="" style="max-width: 50px; border-radius: 50%;">
-            </span>
-                                <img src="assets/images/discover-06.jpg" alt="" style="border-radius: 20px;">
-                                <h4>Mutant Ape Bored</h4>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="line-dec"></div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <span>JOB PAYOUT: <br> <strong>2.03 ETH</strong></span>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="main-button">
-                                    <a href="details.html">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-lg-12">
-                            <span class="author">
-              <img src="assets/images/author.jpg" alt="" style="max-width: 50px; border-radius: 50%;">
-            </span>
-                                <img src="assets/images/discover-05.jpg" alt="" style="border-radius: 20px;">
-                                <h4>Mutant Ape Bored</h4>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="line-dec"></div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <span>JOB PAYOUT: <br> <strong>2.03 ETH</strong></span>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="main-button">
-                                    <a href="details.html">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-lg-12">
-                            <span class="author">
-              <img src="assets/images/author-03.jpg" alt="" style="max-width: 50px; border-radius: 50%;">
-            </span>
-                                <img src="assets/images/discover-04.jpg" alt="" style="border-radius: 20px;">
-                                <h4>Mutant Ape Bored</h4>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="line-dec"></div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <span>JOB PAYOUT: <br> <strong>2.03 ETH</strong></span>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="main-button">
-                                    <a href="details.html">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="section-heading">
-                        <div class="line-dec"></div>
-                        <h2>Melanie Smith’s <em>Reviews</em>.</h2>
-                    </div>
-                    <section>
-                        <div class="row d-flex justify-content-center">
-
-                        </div>
-
-                        <div class="row text-center">
-                            <div class="col-md-4 mb-5 mb-md-0">
-                                <div class="d-flex justify-content-center mb-4">
-                                    <img src="assets/images/current-01.jpg" />
-                                </div>
-                                <h5 class="mb-3">Maria Smantha</h5>
-                                <h6 class="text-primary mb-3">Web Developer</h6>
-                                <p class="px-xl-3">
-                                    <i class="fas fa-quote-left pe-2"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.
-                                </p>
-                                <ul class="list-unstyled d-flex justify-content-center mb-0">
-                                    <li>
-                                        <i class="fas fa-star fa-sm text-warning"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star fa-sm text-warning"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star fa-sm text-warning"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star fa-sm text-warning"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star-half-alt fa-sm text-warning"></i>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-4 mb-5 mb-md-0">
-                                <div class="d-flex justify-content-center mb-4">
-                                    <img src="assets/images/current-03.jpg" />
-                                </div>
-                                <h5 class="mb-3">Dave Cudrow</h5>
-                                <h6 class="text-primary mb-3">Graphic Designer</h6>
-                                <p class="px-xl-3">
-                                    <i class="fas fa-quote-left pe-2"></i>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi.
-                                </p>
-                                <ul class="list-unstyled d-flex justify-content-center mb-0">
-                                    <li>
-                                        <i class="fas fa-star fa-sm text-warning"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star fa-sm text-warning"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star fa-sm text-warning"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star fa-sm text-warning"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star fa-sm text-warning"></i>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-4 mb-0">
-                                <div class="d-flex justify-content-center mb-4">
-                                    <img src="assets/images/current-04.jpg" />
-                                </div>
-                                <h5 class="mb-3">Jane Smith</h5>
-                                <h6 class="text-primary mb-3">Marketing Specialist</h6>
-                                <p class="px-xl-3">
-                                    <i class="fas fa-quote-left pe-2"></i>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
-                                </p>
-                                <ul class="list-unstyled d-flex justify-content-center mb-0">
-                                    <li>
-                                        <i class="fas fa-star fa-sm text-warning"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star fa-sm text-warning"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star fa-sm text-warning"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star fa-sm text-warning"></i>
-                                    </li>
-                                    <li>
-                                        <i class="far fa-star fa-sm text-warning"></i>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
+                      </div>
+                    
+                    
+                    
+                    
                 </div>
             </div>
         </div>
     </div>
-</div>
 </body>
+
 </html>

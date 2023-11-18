@@ -35,4 +35,7 @@ public class ProjectServiceImpl implements ProjectService {
     public Project save(Project project) {
         return projectRepo.save(project);
     }
+    public List<Project> findAllbyUser(long id) {
+        return projectRepo.findAllByUser(id);
+    }
 }

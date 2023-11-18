@@ -7,6 +7,10 @@ import com.startuptank.wbteam.service.serviceImpl.ProjectServiceImpl;
 import com.startuptank.wbteam.service.serviceImpl.UserServiceImpl;
 import com.startuptank.wbteam.util.CookieUtil;
 import com.startuptank.wbteam.util.SessionService;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -59,6 +63,8 @@ public class UserController {
         if (user != null) {
             if (userService.activeUser(user)) {
                 cookieUtil.setCookie( user.getEmail(),"email",  2);
+                cookieUtil.setCookie( user.getUserId().toString(),"id",  2);
+                model.addAttribute("user",user.getUserId());
                 cookieUtil.setCookie( user.getPassword(), "password" ,2);
                 sessionService.set("UserCurrent", user);
                 return "redirect:/home";
@@ -131,6 +137,11 @@ public class UserController {
     //   profile
     @RequestMapping(value = "/author", method = RequestMethod.GET)
     public String getAuthor(Model model){
+        long id = Long.parseLong(cookieUtil.getCookie("id").get());
+        System.out.println(id);
+        List<Project> projects = projectService.findAllbyUser(id);
+        model.addAttribute("projects",projects);
+
         return "user/author";
     }
 
