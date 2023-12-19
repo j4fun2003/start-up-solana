@@ -35,9 +35,12 @@ public class ProjectServiceImpl implements ProjectService {
     public Project save(Project project) {
         return projectRepo.save(project);
     }
+<<<<<<< HEAD
 
     @Override
     public List<Project> findAllbyUser(long id) {
         return projectRepo.findAllByUser(id);
     }
+=======
+>>>>>>> 5748ed48fc7f1dfc4097e0da22870fdc6ed853cd
 }

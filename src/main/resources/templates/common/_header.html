@@ -34,10 +34,18 @@
                 <li th:unless="${session.UserCurrent != null}"><a href="/register">Register</a></li>
                 <li th:unless="${session.UserCurrent != null}"><a href="/forgot-password">Forgot Password</a></li>
                 <li th:if="${session.UserCurrent != null}"><a href="/logout">Log Out</a></li>
+<<<<<<< HEAD
                 <li><button onclick="transferNft()">Chuyen NFT</button></li>
                 <li><button onclick="getAll()">getNFT</button></li>
 <!--                <li><input type="file" id="fileInput"></li>-->
 <!--                <li><button onclick="mintNft()">bam tui di</button></li>-->
+=======
+                <li><button onclick="transferSol()">bam e di</button></li>
+                <li><button onclick="transferNft()">bam a di</button></li>
+                <li><button onclick="getAll()">bam chi di</button></li>
+                <li><input type="file" id="fileInput"></li>
+                <li><button onclick="mintNft()">bam tui di</button></li>
+>>>>>>> 5748ed48fc7f1dfc4097e0da22870fdc6ed853cd
               </ul>
             </div>
           </ul>

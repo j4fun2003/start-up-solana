@@ -98,23 +98,38 @@
           </button>
         </div>
         <div class="modal-body">
+<<<<<<< HEAD
           <h4 th:text="${project.projectName}"></h4>
           <br>
           <br>
 
           <div class="input-group mb-3">
             <h4 th:text="${project.user.fullName}"></h4>
+=======
+          <h5>Invest in [PROJECT NAME]</h5>
+          <br>
+          <p stlye="color: white">Current tokens: [Token Numbers]</p>
+          <br>
+
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="ENTER YOUR TOKENS" aria-label="TOKENS" aria-describedby="basic-addon2">
+
+>>>>>>> 5748ed48fc7f1dfc4097e0da22870fdc6ed853cd
           </div>
 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
+<<<<<<< HEAD
           <form action="/buy-project" method="POST">
 
             <button type="button" class="btn btn-danger" onclick="transferSol()" id="buyButton">Invest in this Project</button>
 
           </form>
+=======
+          <button type="button" class="btn btn-danger" >Invest in this Project</button>
+>>>>>>> 5748ed48fc7f1dfc4097e0da22870fdc6ed853cd
         </div>
       </div>
     </div>

@@ -12,6 +12,9 @@ public interface ProjectService {
     List<Project> findByProjectFieldFieldName(String fieldName);
     Project findProjectByProjectId(Integer id);
     Project save(Project project);
+<<<<<<< HEAD
 
     List<Project> findAllbyUser(long id);
+=======
+>>>>>>> 5748ed48fc7f1dfc4097e0da22870fdc6ed853cd
 }

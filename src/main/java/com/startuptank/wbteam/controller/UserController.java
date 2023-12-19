@@ -139,10 +139,17 @@ public class UserController {
         return "user/details";
     }
     //   profile
+<<<<<<< HEAD
 //    @RequestMapping(value = "/author", method = RequestMethod.GET)
 //    public String getAuthor(Model model){
 //        return "user/author";
 //    }
+=======
+    @RequestMapping(value = "/author", method = RequestMethod.GET)
+    public String getAuthor(Model model){
+        return "user/author";
+    }
+>>>>>>> 5748ed48fc7f1dfc4097e0da22870fdc6ed853cd
 
     //    create project
     @RequestMapping(value = "/createproject", method = RequestMethod.GET)
@@ -154,6 +161,7 @@ public class UserController {
         model.addAttribute("projectfield",projectFileService.findAll());
         return "user/create-project";
     }
+<<<<<<< HEAD
 //    @RequestMapping(value = "/createproject", method = RequestMethod.POST)
 //    public String createProject(Model model,
 //                                @ModelAttribute("project") Project project, @RequestParam("image") MultipartFile multipartFile){
@@ -212,5 +220,18 @@ public class UserController {
         model.addAttribute("projects",projects);
         return "user/author";
     }
+=======
+    @RequestMapping(value = "/createproject", method = RequestMethod.POST)
+    public String createProject(Model model,
+                                @ModelAttribute("project") Project project, @RequestParam("image") MultipartFile multipartFile){
+        User user = sessionService.get("UserCurrent");
+        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+        project.setProjectImageUrl(fileName);
+
+        project.setUser(user);
+        Project p = projectService.save(project);
+        return "redirect:/home";
+    }
+>>>>>>> 5748ed48fc7f1dfc4097e0da22870fdc6ed853cd
 
 }
