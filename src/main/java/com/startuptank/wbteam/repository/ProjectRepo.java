@@ -11,7 +11,12 @@ import java.util.List;
 @Repository
 public interface ProjectRepo extends JpaRepository<Project, Integer> {
     List<Project> findByProjectFieldFieldName(String fieldName);
-
     Project findProjectByProjectId(Integer id);
+    
+    
+
+    @Query(value = "select * from projects where user_id = ?1",nativeQuery = true)
+    List<Project> findAllByUser(long id);
+
 }
 

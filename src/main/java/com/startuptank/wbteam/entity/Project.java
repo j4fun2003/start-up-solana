@@ -3,6 +3,7 @@ package com.startuptank.wbteam.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 import java.util.List;
@@ -36,6 +37,8 @@ public class Project {
     private Double fundingGoal;
 
     @Column(name = "deadline")
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date deadline;
 
     @Column(name = "contact_email")
@@ -53,6 +56,9 @@ public class Project {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    @Column(name = "address_nft")
+    private String addressNft;
     @Override
     public String toString() {
         return "Project{" +
@@ -66,6 +72,7 @@ public class Project {
                 ", contactEmail='" + contactEmail + '\'' +
                 ", projectStatus='" + projectStatus + '\'' +
                 ", investmentType='" + investmentType + '\'' +
+                ", addressNft='" + addressNft + '\'' +
                 '}';
     }
 

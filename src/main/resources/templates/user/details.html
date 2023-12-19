@@ -22,16 +22,18 @@
         </div>
         <div class="col-lg-5 align-self-center">
           <h4 th:text="${project.projectName}"></h4>
+          <h6 th:text="${project.user.walletAddress}" class="reciverKey" hidden></h6>
+          <h6 th:text="${project.addressNft}" class="addressNft" hidden></h6>
           <span class="author">
             <img src="/user/images/author-03.jpg" alt="" style="max-width: 50px; border-radius: 50%;">
             <h6 th:text="${project.user.fullName}"><br><a href="#">@CLIENTTAG</a></h6>
+
           </span>
-          <p>Lorem ipsum dolor sit amet, consectetu dipiscingei elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua.</p>
+          <p  th:text="${project.projectDescription}"></p>
           <div class="row">
             <div class="col-3">
               <span class="bid">
-                JOB PAYOUT<br><strong th:text="${project.fundingGoal}"></strong>
+                JOB PAYOUT<br><strong id="fundingGoal" class="fundingGoal" th:text="${project.fundingGoal}"></strong>
               </span>
             </div>
 
@@ -47,6 +49,9 @@
           <form action="submit">
 
             <button type="submit" id="form-submit" class="main-button">CONTACT CLIENT</button>
+            <button type="button" class="main-button" data-toggle="modal" data-target="#exampleModalCenter">
+              INVEST IN THIS PROJECT
+            </button>
           </form>
         </div>
         <div class="col-lg-12">
@@ -83,6 +88,42 @@
     </div>
     <br>
   </div>
+  <!--MODAL-->
+
+  <div class="modal fade  modal-dark" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+
+          </button>
+        </div>
+        <div class="modal-body">
+          <h4 th:text="${project.projectName}"></h4>
+          <br>
+          <br>
+
+          <div class="input-group mb-3">
+            <h4 th:text="${project.user.fullName}"></h4>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+          <form action="/buy-project" method="POST">
+
+            <button type="button" class="btn btn-danger" onclick="transferSol()" id="buyButton">Invest in this Project</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--MODAL-->
 </div>
 </body>
 </html>
+<script>
+
+
+</script>

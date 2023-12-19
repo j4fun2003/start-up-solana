@@ -18,11 +18,14 @@
           <!-- ***** Logo End ***** -->
           <!-- ***** Menu Start ***** -->
           <ul class="nav">
-            <li><a href="/index" class="active">Home</a></li>
+            <li th:if="${session.UserCurrent != null}" th:text="${'WELCOME '+ session.UserCurrent.fullName}"> </li>
+            <li><a href="/home" class="active">Home</a></li>
             <li><a href="/explore">Explore</a></li>
-            <li><a href="/details">Item Details</a></li>
             <li><a href="/author">Author</a></li>
             <li><a href="/createproject">Create Yours</a></li>
+            <li th:if="${session.UserCurrent != null}">
+              <button  onclick="connectWallet()">Connect Solana</button>
+            </li>
             <div class="dropdown">
               <a class="nav-link dropdown-toggle" href="#"
                  id="navbardrop" data-toggle="dropdown"> Information </a>
@@ -31,6 +34,10 @@
                 <li th:unless="${session.UserCurrent != null}"><a href="/register">Register</a></li>
                 <li th:unless="${session.UserCurrent != null}"><a href="/forgot-password">Forgot Password</a></li>
                 <li th:if="${session.UserCurrent != null}"><a href="/logout">Log Out</a></li>
+                <li><button onclick="transferNft()">Chuyen NFT</button></li>
+                <li><button onclick="getAll()">getNFT</button></li>
+<!--                <li><input type="file" id="fileInput"></li>-->
+<!--                <li><button onclick="mintNft()">bam tui di</button></li>-->
               </ul>
             </div>
           </ul>

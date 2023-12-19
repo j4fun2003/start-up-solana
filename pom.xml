@@ -51,6 +51,19 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.paymennt/cryptoj -->
+		<dependency>
+			<groupId>com.paymennt</groupId>
+			<artifactId>cryptoj</artifactId>
+			<version>0.0.5</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.mmorrell/solanaj -->
+		<dependency>
+			<groupId>com.mmorrell</groupId>
+			<artifactId>solanaj</artifactId>
+			<version>1.15.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

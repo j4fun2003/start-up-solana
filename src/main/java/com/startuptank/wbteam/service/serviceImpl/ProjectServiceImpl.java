@@ -30,4 +30,14 @@ public class ProjectServiceImpl implements ProjectService {
     public Project findProjectByProjectId(Integer id) {
         return projectRepo.findProjectByProjectId(id);
     }
+
+    @Override
+    public Project save(Project project) {
+        return projectRepo.save(project);
+    }
+
+    @Override
+    public List<Project> findAllbyUser(long id) {
+        return projectRepo.findAllByUser(id);
+    }
 }

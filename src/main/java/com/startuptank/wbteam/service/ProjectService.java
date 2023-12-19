@@ -10,6 +10,8 @@ import java.util.Optional;
 public interface ProjectService {
     List<Project> findAll();
     List<Project> findByProjectFieldFieldName(String fieldName);
-
     Project findProjectByProjectId(Integer id);
+    Project save(Project project);
+
+    List<Project> findAllbyUser(long id);
 }
